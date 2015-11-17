@@ -1,5 +1,5 @@
 // replace "folder name" below with the folder you are working on
-// replace "file_" on line 26 with any prefix you want for your new file names
+// replace "file_" on line 24 with any prefix you want for your new file names
 
 function bulkRenameLog () {
   var foldername = 'folder name';
