@@ -1,0 +1,34 @@
+// replace "folder name" below with the folder you are working on
+// replace "file_" on line 26 with any prefix you want for your new file names
+
+function bulkRenameLog () {
+  var foldername = 'folder name';
+  var folders = DriveApp.getFoldersByName(foldername)
+  var folder = folders.next();
+  var contents = folder.getFiles();
+  
+  var sheet = SpreadsheetApp.getActiveSheet();
+  sheet.clear();
+  sheet.appendRow( ['name', 'newname', 'link', 'filetype'] );
+  
+  var file, name, link, row, filetype;
+  var newname;
+  var count = 1;
+  
+  while(contents.hasNext()) {
+    file = contents.next();
+    name = file.getName();
+    
+    // comment out the following two lines if you don't want to rename the files
+    // if you do this, note that the newname column is redundant
+    newname = "file_"+ count;
+    file.setName(newname);
+    
+    link = file.getUrl();
+    filetype = file.getMimeType();
+    sheet.appendRow( [name, newname, link, filetype] ); 
+    count = count + 1;
+        
+  }  
+};
+
