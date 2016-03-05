@@ -19,10 +19,10 @@ function bulkRenameLog () {
     file = contents.next();
     name = file.getName();
     
-    // comment out the following two lines if you don't want to rename the files
+    // UNcomment out the following two lines if you don't want to rename the files
     // if you do this, note that the newname column is redundant
-    newname = "file_"+ count;
-    file.setName(newname);
+    //newname = "file_"+ count;
+    //file.setName(newname);
     
     link = file.getUrl();
     filetype = file.getMimeType();
